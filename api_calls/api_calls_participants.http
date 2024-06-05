@@ -1,0 +1,42 @@
+@base_URL=http://localhost:3000/api/participants
+
+get {{base_URL}}
+
+###
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlZTA5ZWZkMjQyMzEwMWZhYzc1OGQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MTc0OTM5MzQsImV4cCI6MTcxNzQ5NzUzNH0.TuA4QsQpemdmVKibrop7jds38-x0IBhwkKZj9APujw4
+POST {{base_URL}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "user": "665ee05afd2423101fac758a",
+    "event": "665ee117fd2423101fac7596",
+    "status": "pending"
+}
+
+###
+get {{base_URL}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+###
+@participantId=664f1e8512c0562b220e9378
+PUT {{base_URL}}/{{participantId}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "user": "664de9c31082f414b6c3248c",
+    "event": "664f13a78eb66698bad57b51",
+    "status": "confirmed"
+}
+
+###
+@participantId=664f1e8512c0562b220e9378
+delete {{base_URL}}/{{participantId}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+  
+    
+

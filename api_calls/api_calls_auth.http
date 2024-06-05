@@ -1,0 +1,11 @@
+@base_URL=http://localhost:3000/api/auth
+
+
+###
+post {{base_URL}}
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "12345"
+}

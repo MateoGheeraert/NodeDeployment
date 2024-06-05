@@ -1,0 +1,36 @@
+@base_URL=http://localhost:3000/api/users
+
+get {{base_URL}}
+
+###
+post {{base_URL}}/register
+Content-Type: application/json
+
+{
+    "name": "mateo", 
+    "email": "mateo@gmail.com",
+    "password": "12345"
+}
+###
+post {{base_URL}}/register
+Content-Type: application/json
+
+{
+    "name": "admin", 
+    "email": "admin@gmail.com",
+    "password": "12345",
+    "isAdmin": "true"
+
+}
+###
+post {{base_URL}}/login
+Content-Type: application/json
+
+{
+    "email": "mateo@gmail.com",
+    "password": "12345"
+}
+###
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlZTA5ZWZkMjQyMzEwMWZhYzc1OGQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MTc0OTM5MzQsImV4cCI6MTcxNzQ5NzUzNH0.TuA4QsQpemdmVKibrop7jds38-x0IBhwkKZj9APujw4
+get {{base_URL}}/me
+x-auth-token: {{authToken}}

@@ -1,0 +1,54 @@
+@base_URL=http://localhost:3000/api/events
+
+get {{base_URL}}
+
+###
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlZTA5ZWZkMjQyMzEwMWZhYzc1OGQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MTc0OTM5MzQsImV4cCI6MTcxNzQ5NzUzNH0.TuA4QsQpemdmVKibrop7jds38-x0IBhwkKZj9APujw4
+POST {{base_URL}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "title": "Nacht Van De Dolle Koe",
+    "description": "Fuif van KLJ Merkem",
+    "date": "2024-04-06T00:00:00.000Z",
+    "location": "665ee0d1fd2423101fac7592",
+    "category": "665ee0c1fd2423101fac7590"
+}
+
+###
+get {{base_URL}}
+Content-Type: application/json
+
+###
+@eventId=66549180abb9fbc9d99d4ddc
+PUT {{base_URL}}/{{eventId}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "title": "Nacht Van De Dolle Koe",
+    "description": "Jaarlijkse fuif van KLJ Merkem",
+    "date": "2024-04-06T00:00:00.000Z",
+    "location": "664f090599cf7815108265f2",
+    "category": "664e416216aa22674b5a6965"
+}
+
+###
+DELETE {{base_URL}}/{{eventId}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+POST {{base_URL}}/{{eventId}}/participants
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "user": "66548fdaabb9fbc9d99d4dbe"
+}
+
+###
+@userID=66548fdaabb9fbc9d99d4dbe
+DELETE {{base_URL}}/{{eventId}}/participants/{{userID}}
+Content-Type: application/json
+x-auth-token: {{authToken}}

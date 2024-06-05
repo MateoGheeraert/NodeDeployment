@@ -1,0 +1,22 @@
+@base_URL=http://localhost:3000/api/categories
+
+get {{base_URL}}
+
+###
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlZTA5ZWZkMjQyMzEwMWZhYzc1OGQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MTc0OTM5MzQsImV4cCI6MTcxNzQ5NzUzNH0.TuA4QsQpemdmVKibrop7jds38-x0IBhwkKZj9APujw4
+post {{base_URL}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "name": "Fuif"
+}
+
+###
+get {{base_URL}}
+Content-Type: application/json
+
+###
+@objId=664e416216aa22674b5a6965
+get {{base_URL}}/{{objId}}
+Content-Type: application/json
