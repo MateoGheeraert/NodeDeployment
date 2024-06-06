@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "description": "API documentation for EventApp"
   },
-  "host": "localhost:3000",
+  "host": "event-cbh2.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
